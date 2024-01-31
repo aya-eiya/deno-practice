@@ -9,6 +9,7 @@
       "**/node_modules"
     ],
     "include": [],
+    "project": "f4b92a1b-e324-49bc-863e-d28ee5a60f43"
   },
   "exclude": [
     "**/_fresh/*"
