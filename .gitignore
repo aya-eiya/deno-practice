@@ -1,0 +1,27 @@
+# deno
+.cache/
+.deno/
+
+# js
+node_modules/
+dist/
+build/
+coverage/
+
+# ts
+*.tsbuildinfo
+*.js.map
+
+# misc
+.idea/
+*.iml
+*.log
+*.log.*
+*.swp
+.DS_Store
+*.pem
+core
+
+
+# vercel
+.vercel
