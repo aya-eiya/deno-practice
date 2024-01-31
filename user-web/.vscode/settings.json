@@ -4,9 +4,6 @@
   "extensions.ignoreRecommendations": false,
   "deno.enable": true,
   "deno.lint": true,
-  "deno.enablePaths": [
-    "./worker"
-  ],
   "editor.defaultFormatter": "denoland.vscode-deno",
   "[typescriptreact]": {
     "editor.defaultFormatter": "denoland.vscode-deno"
