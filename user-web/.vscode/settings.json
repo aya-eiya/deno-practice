@@ -1,0 +1,24 @@
+{
+  "cSpell.words": ["deno"],
+  "editor.formatOnSave": true,
+  "extensions.ignoreRecommendations": false,
+  "deno.enable": true,
+  "deno.lint": true,
+  "deno.enablePaths": [
+    "./worker"
+  ],
+  "editor.defaultFormatter": "denoland.vscode-deno",
+  "[typescriptreact]": {
+    "editor.defaultFormatter": "denoland.vscode-deno"
+  },
+  "[typescript]": {
+    "editor.defaultFormatter": "denoland.vscode-deno"
+  },
+  "[javascriptreact]": {
+    "editor.defaultFormatter": "denoland.vscode-deno"
+  },
+  "[javascript]": {
+    "editor.defaultFormatter": "denoland.vscode-deno"
+  },
+  "css.customData": [".vscode/tailwind.json"]
+}
