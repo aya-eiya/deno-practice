@@ -34,3 +34,4 @@ jobs:
         with:
           project: 'user-web' # 📝 Update the deploy project name if necessary
           entrypoint: './main.ts' # 📝 Update the entrypoint if necessary
+          root: 'user-web'
