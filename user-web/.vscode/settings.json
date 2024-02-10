@@ -1,5 +1,9 @@
 {
-  "cSpell.words": ["deno"],
+  "cSpell.words": [
+    "deno",
+    "nums",
+    "preact"
+  ],
   "editor.formatOnSave": true,
   "extensions.ignoreRecommendations": false,
   "deno.enable": true,
