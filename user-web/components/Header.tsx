@@ -1,6 +1,11 @@
+import { useSignal } from '@preact/signals'
 import DrawerMenu from '../islands/menu/DrawerMenu.tsx'
+import Feedback from '../islands/scrollY/Feedback.tsx'
+import MainTitle from '../islands/menu/MainTitle.tsx'
+import NaviBar from '../islands/menu/NaviBar.tsx'
 
 export default function Header() {
+  const scrollY = useSignal<number | undefined>(undefined)
   const mainTitle = {
     title: 'Title Logo',
     subtitle: 'Denoの練習サイト',
@@ -38,18 +43,19 @@ export default function Header() {
     },
   }
   return (
-    <header className={'sticky w-full h-32 flex flex-row justify-between items-end px-12'}>
+    <header className={'fixed top-0 w-full h-32 flex flex-row justify-between items-end px-12 z-10'}>
+      <Feedback scrollY={scrollY} />
       <div className={'header-logo w-1/2 flex items-center pl-8 py-6'}>
-        <p className={'flex px-2 text-lg'}>Title Logo</p>
+        <MainTitle title={mainTitle.title} scrollY={scrollY} />
       </div>
       <nav className={'w-5/6 flex content-center justify-end mr-10'}>
-        <div className={'header-menu w-1/2 flex flex-row justify-between items-center py-6'}>
+        <NaviBar scrollY={scrollY}>
           <div className={'menu-item px-2'}>{menuItems.Home.title}</div>
           <div className={'menu-item px-2'}>{menuItems.About.title}</div>
           <div className={'menu-item px-2'}>{menuItems.News.title}</div>
           <div className={'menu-item px-2'}>{menuItems.Projects.title}</div>
           <div className={'menu-item px-2'}>{menuItems.Contact.title}</div>
-        </div>
+        </NaviBar>
       </nav>
       <nav>
         <div className={'header-drawer-menu'}>

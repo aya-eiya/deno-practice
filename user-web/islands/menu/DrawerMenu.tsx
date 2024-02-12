@@ -1,5 +1,6 @@
 import { Signal, useSignal } from '@preact/signals'
 import { JSX } from 'preact/jsx-runtime'
+
 function DrawerSwitch({ signal }: { signal: Signal<boolean> }) {
   return (
     <>
@@ -29,7 +30,10 @@ export default function DrawerMenu({ children }: JSX.HTMLAttributes) {
   return (
     <>
       <DrawerSwitch signal={drawerIsOpen} />
-      <div className={'drawer-menu absolute left-0 top-0 ' + (drawerIsOpen.value ? 'z-30' : 'hidden')}>
+      <div
+        className={'drawer-menu absolute left-0 top-0 ' +
+          (drawerIsOpen.value ? 'animate-drawer-effect z-30' : 'hidden')}
+      >
         {children}
       </div>
     </>
