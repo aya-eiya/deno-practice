@@ -13,7 +13,7 @@ export default function SPFrame({ image, title, reverse }: Props) {
           : 'animate-v-infinity-scroll translate-y-[-155%]')}
     >
       <div
-        className={' rounded-lg md:rounded-xl xl:rounded-3xl rounded-b-sm md:rounded-b-md bg-slate-400 my-auto h-full flex items-center'}
+        className={' rounded-lg md:rounded-t-xl xl:rounded-t-3xl rounded-b-sm md:rounded-b-md bg-slate-400 my-auto h-full flex items-center'}
       >
         <img src={image} className={'w-full'} alt={title} />
       </div>
