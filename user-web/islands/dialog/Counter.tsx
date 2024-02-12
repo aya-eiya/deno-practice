@@ -1,5 +1,4 @@
 import type { Signal } from '@preact/signals'
-import { Button } from '../../components/Button.tsx'
 import { useEffect, useRef } from 'preact/hooks'
 
 interface CounterProps {
@@ -21,25 +20,25 @@ export default function Counter({
   }, [isOpen.value])
   return (
     <>
-      <Button onClick={() => isOpen.value = !isOpen.value}>Open Counter</Button>
+      <button onClick={() => isOpen.value = !isOpen.value}>Open Counter</button>
 
-      <div class='mx-auto max-w-screen-md'>
+      <div className={'mx-auto max-w-screen-md'}>
         <dialog ref={ref} className={'backdrop-blur-2xl backdrop-filter w-2/6'}>
           <header>
             <div className={'flex flex-row justify-between'}>
               <div className={'p-3'}>🔔</div>
               <div className={'p-3'}>Counter</div>
               <div>
-                <Button className={'border-none p-3'} onClick={() => isOpen.value = false}>
+                <button className={'border-none p-3'} onClick={() => isOpen.value = false}>
                   <p>x</p>
-                </Button>
+                </button>
               </div>
             </div>
           </header>
-          <div class='flex gap-8 py-6 justify-center'>
-            <Button onClick={() => count.value -= 1}>-1</Button>
-            <p class='text-3xl tabular-nums'>{count}</p>
-            <Button onClick={() => count.value += 1}>+1</Button>
+          <div className={'flex gap-8 py-6 justify-center'}>
+            <button onClick={() => count.value -= 1}>-1</button>
+            <p className={'text-3xl tabular-nums'}>{count}</p>
+            <button onClick={() => count.value += 1}>+1</button>
           </div>
         </dialog>
       </div>

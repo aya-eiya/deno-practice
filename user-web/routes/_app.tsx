@@ -11,7 +11,7 @@ export default function App({ Component }: PageProps) {
       </head>
       <body>
         <Header />
-        <div class={'absolute top-0 w-full'}>
+        <div className={'absolute top-0 w-full'}>
           <Component />
         </div>
       </body>
