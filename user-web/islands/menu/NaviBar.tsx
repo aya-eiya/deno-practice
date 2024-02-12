@@ -17,8 +17,8 @@ export default function NaviBar({ children, scrollY }: JSX.HTMLAttributes & { sc
   }, [scrollY.value, sw])
   return (
     <div
-      className={'header-menu w-1/2 flex flex-row justify-between items-center py-6 ' +
-        (sw === undefined ? '' : (sw ? 'animate-slide-down' : 'animate-slide-up translate-y-[-300%]'))}
+      className={'header-menu md:w-1/2 flex flex-row justify-between items-center py-6 ' +
+        (sw === undefined ? '' : (sw ? 'md:animate-slide-down' : 'md:animate-slide-up md:translate-y-[-300%]'))}
     >
       {children}
     </div>

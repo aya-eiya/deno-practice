@@ -17,9 +17,9 @@ export default function MainTitle({ title, scrollY }: { title: string; scrollY: 
   return (
     <p
       className={'flex px-2 text-2xl font-bold ' +
-        (sw === undefined ? 'hidden' : (sw ? 'animate-fade-out opacity-0' : 'animate-fade-in'))}
+        (sw === undefined ? 'md:hidden' : (sw ? 'md:animate-fade-out md:opacity-0' : 'md:animate-fade-in'))}
     >
-      {title}/{sw === undefined ? 'hidden' : (sw ? 'animate-fade-out' : 'animate-fade-in')}
+      {title}
     </p>
   )
 }

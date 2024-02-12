@@ -14,7 +14,7 @@ function DrawerSwitch({ signal }: { signal: Signal<boolean> }) {
       />
       <label for='drawer-switch' className={'text-3xl block z-50 relative'}>
         <div
-          className={'rounded-full bg-white hover:bg-yellow-400 cursor-pointer w-16 h-16 m-4 flex justify-center items-center select-none'}
+          className={'md:rounded-full md:bg-white md:hover:bg-yellow-400 cursor-pointer w-16 h-16 md:m-4 flex justify-center items-center select-none'}
         >
           <span className={'block'}>
             {signal.value ? <>&#10005;</> : <>&#9776;</>}
