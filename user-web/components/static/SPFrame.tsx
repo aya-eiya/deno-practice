@@ -8,9 +8,11 @@ export default function SPFrame({ image, title, reverse }: Props) {
   return (
     <div
       className={'mx-2 flex flex-col shadow-md shadow-gray-500 rounded-lg md:rounded-xl xl:rounded-3xl w-full aspect-[7/12] bg-white p-2 ' +
-        (reverse
-          ? 'animate-v-infinity-scroll-reverse translate-y-[-175%]'
-          : 'animate-v-infinity-scroll translate-y-[-155%]')}
+        (reverse === undefined
+          ? ''
+          : (reverse
+            ? 'animate-v-infinity-scroll-reverse translate-y-[-175%]'
+            : 'animate-v-infinity-scroll translate-y-[-155%]'))}
     >
       <div
         className={' rounded-lg md:rounded-t-xl xl:rounded-t-3xl rounded-b-sm md:rounded-b-md bg-slate-400 my-auto h-full flex items-center'}

@@ -4,7 +4,12 @@
 
 import * as $_404 from './routes/_404.tsx'
 import * as $_app from './routes/_app.tsx'
+import * as $about from './routes/about.tsx'
+import * as $contact from './routes/contact.tsx'
+import * as $futures from './routes/futures.tsx'
 import * as $index from './routes/index.tsx'
+import * as $news from './routes/news.tsx'
+import * as $projects from './routes/projects.tsx'
 import * as $dialog_Counter from './islands/dialog/Counter.tsx'
 import * as $menu_DrawerMenu from './islands/menu/DrawerMenu.tsx'
 import * as $menu_MainTitle from './islands/menu/MainTitle.tsx'
@@ -16,7 +21,12 @@ const manifest = {
   routes: {
     './routes/_404.tsx': $_404,
     './routes/_app.tsx': $_app,
+    './routes/about.tsx': $about,
+    './routes/contact.tsx': $contact,
+    './routes/futures.tsx': $futures,
     './routes/index.tsx': $index,
+    './routes/news.tsx': $news,
+    './routes/projects.tsx': $projects,
   },
   islands: {
     './islands/dialog/Counter.tsx': $dialog_Counter,

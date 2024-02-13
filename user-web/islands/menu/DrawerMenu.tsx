@@ -1,7 +1,8 @@
 import { Signal, useSignal } from '@preact/signals'
+import { useEffect, useState } from 'preact/hooks'
 import { JSX } from 'preact/jsx-runtime'
 
-function DrawerSwitch({ signal }: { signal: Signal<boolean> }) {
+function DrawerSwitch({ isDrawerOpen }: { isDrawerOpen: Signal<boolean> }) {
   return (
     <>
       <input
@@ -9,7 +10,7 @@ function DrawerSwitch({ signal }: { signal: Signal<boolean> }) {
         id='drawer-switch'
         className={'hidden'}
         onChange={(e) => {
-          signal.value = (e.target as HTMLInputElement).checked
+          isDrawerOpen.value = (e.target as HTMLInputElement).checked
         }}
       />
       <label for='drawer-switch' className={'text-3xl block z-50 relative'}>
@@ -17,7 +18,7 @@ function DrawerSwitch({ signal }: { signal: Signal<boolean> }) {
           className={'md:rounded-full md:bg-white md:hover:bg-yellow-400 cursor-pointer w-16 h-16 md:m-4 flex justify-center items-center select-none'}
         >
           <span className={'block'}>
-            {signal.value ? <>&#10005;</> : (
+            {isDrawerOpen.value ? <>&#10005;</> : (
               <>
                 <svg
                   viewBox='0 0 24 24'
@@ -36,13 +37,26 @@ function DrawerSwitch({ signal }: { signal: Signal<boolean> }) {
 }
 
 export default function DrawerMenu({ children }: JSX.HTMLAttributes) {
-  const drawerIsOpen = useSignal(false)
+  const isDrawerOpen = useSignal(false)
+  const [path, setPath] = useState<string>(String(globalThis.window?.location))
+  useEffect(() => {
+    const renewPath = () => {
+      setPath(String(globalThis.window?.location))
+    }
+    globalThis.window.addEventListener('hashchange', renewPath)
+    return () => {
+      globalThis.window.removeEventListener('hashchange', renewPath)
+    }
+  })
+  useEffect(() => {
+    isDrawerOpen.value = false
+  }, [path])
   return (
     <>
-      <DrawerSwitch signal={drawerIsOpen} />
+      <DrawerSwitch isDrawerOpen={isDrawerOpen} />
       <div
         className={'drawer-menu absolute left-0 top-0 ' +
-          (drawerIsOpen.value ? 'animate-fade-in z-30' : 'hidden')}
+          (isDrawerOpen.value ? 'animate-fade-in z-30' : 'hidden')}
       >
         {children}
       </div>

@@ -1,8 +1,8 @@
 import { useSignal } from '@preact/signals'
-import DrawerMenu from '../islands/menu/DrawerMenu.tsx'
-import Feedback from '../islands/scrollY/Feedback.tsx'
-import MainTitle from '../islands/menu/MainTitle.tsx'
-import NaviBar from '../islands/menu/NaviBar.tsx'
+import DrawerMenu from '../../islands/menu/DrawerMenu.tsx'
+import Feedback from '../../islands/scrollY/Feedback.tsx'
+import MainTitle from '../../islands/menu/MainTitle.tsx'
+import NaviBar from '../../islands/menu/NaviBar.tsx'
 
 export default function Header() {
   const scrollY = useSignal<number | undefined>(undefined)
@@ -17,27 +17,32 @@ export default function Header() {
   }
   const menuItems = {
     'Home': {
-      path: '/',
+      path: '#home',
       title: 'Home',
       desc: 'ホーム',
     },
     'About': {
-      path: '/about',
+      path: '#about',
       title: 'About',
       desc: '私たちについて・会社概要',
     },
-    'News': {
-      path: '/news',
-      title: 'News',
-      desc: 'ニュース・お知らせ',
+    'Futures': {
+      path: '#futures',
+      title: 'Futures',
+      desc: 'サービスの特徴',
     },
     'Projects': {
-      path: '/projects',
+      path: '#projects',
       title: 'Projects',
       desc: '導入事例・プロジェクト',
     },
+    'News': {
+      path: '#news',
+      title: 'News',
+      desc: 'ニュース・お知らせ',
+    },
     'Contact': {
-      path: '/contact',
+      path: '#contact',
       title: 'Contact',
       desc: 'お問い合わせ・お見積もり',
     },
@@ -56,19 +61,29 @@ export default function Header() {
         <nav className={'flex'}>
           <NaviBar scrollY={scrollY}>
             <div className={'menu-item px-2 hidden md:block'}>
-              {menuItems.Home.title}
+              <a href={menuItems.Home.path}>
+                {menuItems.Home.title}
+              </a>
             </div>
             <div className={'menu-item px-2 hidden md:block'}>
-              {menuItems.About.title}
+              <a href={menuItems.About.path}>
+                {menuItems.About.title}
+              </a>
             </div>
             <div className={'menu-item px-2 hidden md:block'}>
-              {menuItems.News.title}
+              <a href={menuItems.Futures.path}>
+                {menuItems.Futures.title}
+              </a>
             </div>
             <div className={'menu-item px-2 hidden md:block'}>
-              {menuItems.Projects.title}
+              <a href={menuItems.Projects.path}>
+                {menuItems.Projects.title}
+              </a>
             </div>
             <div className={'menu-item px-2 block'}>
-              {menuItems.Contact.title}
+              <a href={menuItems.Contact.path}>
+                {menuItems.Contact.title}
+              </a>
             </div>
           </NaviBar>
         </nav>
@@ -80,44 +95,64 @@ export default function Header() {
               >
                 <div className={'w-4/5 md:w-1/5 flex flex-col'}>
                   <div className={'menu-item pb-5 animate-[drawer-effect_1s_ease-out]'}>
-                    <p className={'text-4xl lg:text-6xl font-bold'}>
-                      {menuItems.Home.title}
-                    </p>
-                    <p className={'text-sm text-gray-400'}>
-                      {menuItems.Home.desc}
-                    </p>
+                    <a href={menuItems.Home.path}>
+                      <p className={'text-4xl lg:text-6xl font-bold'}>
+                        {menuItems.Home.title}
+                      </p>
+                      <p className={'text-sm text-gray-400'}>
+                        {menuItems.Home.desc}
+                      </p>
+                    </a>
                   </div>
                   <div className={'menu-item pb-5 animate-[drawer-effect_.9s_ease-out]'}>
-                    <p className={'text-4xl lg:text-6xl font-bold'}>
-                      {menuItems.About.title}
-                    </p>
-                    <p className={'text-sm text-gray-400'}>
-                      {menuItems.About.desc}
-                    </p>
-                  </div>
-                  <div className={'menu-item pb-5 animate-[drawer-effect_.8s_ease-out]'}>
-                    <p className={'text-4xl lg:text-6xl font-bold'}>
-                      {menuItems.News.title}
-                    </p>
-                    <p className={'text-sm text-gray-400'}>
-                      {menuItems.News.desc}
-                    </p>
+                    <a href={menuItems.About.path}>
+                      <p className={'text-4xl lg:text-6xl font-bold'}>
+                        {menuItems.About.title}
+                      </p>
+                      <p className={'text-sm text-gray-400'}>
+                        {menuItems.About.desc}
+                      </p>
+                    </a>
                   </div>
                   <div className={'menu-item pb-5 animate-[drawer-effect_.7s_ease-out]'}>
-                    <p className={'text-4xl lg:text-6xl font-bold'}>
-                      {menuItems.Projects.title}
-                    </p>
-                    <p className={'text-sm text-gray-400'}>
-                      {menuItems.Projects.desc}
-                    </p>
+                    <a href={menuItems.Futures.path}>
+                      <p className={'text-4xl lg:text-6xl font-bold'}>
+                        {menuItems.Futures.title}
+                      </p>
+                      <p className={'text-sm text-gray-400'}>
+                        {menuItems.Futures.desc}
+                      </p>
+                    </a>
+                  </div>
+                  <div className={'menu-item pb-5 animate-[drawer-effect_.7s_ease-out]'}>
+                    <a href={menuItems.Projects.path}>
+                      <p className={'text-4xl lg:text-6xl font-bold'}>
+                        {menuItems.Projects.title}
+                      </p>
+                      <p className={'text-sm text-gray-400'}>
+                        {menuItems.Projects.desc}
+                      </p>
+                    </a>
+                  </div>
+                  <div className={'menu-item pb-5 animate-[drawer-effect_.8s_ease-out]'}>
+                    <a href={menuItems.News.path}>
+                      <p className={'text-4xl lg:text-6xl font-bold'}>
+                        {menuItems.News.title}
+                      </p>
+                      <p className={'text-sm text-gray-400'}>
+                        {menuItems.News.desc}
+                      </p>
+                    </a>
                   </div>
                   <div className={'menu-item pb-5 animate-[drawer-effect_.6s_ease-out]'}>
-                    <p className={'text-4xl lg:text-6xl font-bold'}>
-                      {menuItems.Contact.title}
-                    </p>
-                    <p className={'text-sm text-gray-400'}>
-                      {menuItems.Contact.desc}
-                    </p>
+                    <a href={menuItems.Contact.path}>
+                      <p className={'text-4xl lg:text-6xl font-bold'}>
+                        {menuItems.Contact.title}
+                      </p>
+                      <p className={'text-sm text-gray-400'}>
+                        {menuItems.Contact.desc}
+                      </p>
+                    </a>
                   </div>
                 </div>
                 <div
