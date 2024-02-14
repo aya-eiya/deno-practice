@@ -11,6 +11,10 @@ export default {
   theme: {
     extend: {
       keyframes: {
+        'infinity-scroll': {
+          '0%': { transform: 'translateX(0%)' },
+          '100%': { transform: 'translateX(-20%)' },
+        },
         'v-infinity-scroll': {
           '0%': { transform: 'translateY(-50%)' },
           '40%': { transform: 'translateY(-100%)' },
@@ -55,6 +59,7 @@ export default {
         },
       },
       animation: {
+        'infinity-scroll': 'infinity-scroll 36s linear infinite',
         'v-infinity-scroll': 'v-infinity-scroll 6s ease-in-out infinite',
         'v-infinity-scroll-reverse': 'v-infinity-scroll-reverse 6s ease-in-out infinite',
         'slide-down': 'slide-down .6s ease-in',

@@ -1,3 +1,3 @@
 import { redirectTopHash } from '../server/redirect.ts'
 
-export const handler = redirectTopHash('futures')
+export const handler = redirectTopHash('features')

@@ -9,8 +9,12 @@ function DrawerSwitch({ isDrawerOpen }: { isDrawerOpen: Signal<boolean> }) {
         type='checkbox'
         id='drawer-switch'
         className={'hidden'}
+        checked={isDrawerOpen.value}
         onChange={(e) => {
           isDrawerOpen.value = (e.target as HTMLInputElement).checked
+          if (isDrawerOpen.value) {
+            globalThis.location.hash = 'menu'
+          }
         }}
       />
       <label for='drawer-switch' className={'text-3xl block z-50 relative'}>
@@ -37,18 +41,21 @@ function DrawerSwitch({ isDrawerOpen }: { isDrawerOpen: Signal<boolean> }) {
 }
 
 export default function DrawerMenu({ children }: JSX.HTMLAttributes) {
+  const [path, setPath] = useState<string>(String(globalThis.location))
   const isDrawerOpen = useSignal(false)
-  const [path, setPath] = useState<string>(String(globalThis.window?.location))
   useEffect(() => {
     const renewPath = () => {
-      setPath(String(globalThis.window?.location))
+      setPath(String(globalThis.location))
     }
-    globalThis.window.addEventListener('hashchange', renewPath)
+    globalThis.addEventListener('hashchange', renewPath)
     return () => {
-      globalThis.window.removeEventListener('hashchange', renewPath)
+      globalThis.removeEventListener('hashchange', renewPath)
     }
   })
   useEffect(() => {
+    if (new URL(path).hash === '#menu') {
+      return
+    }
     isDrawerOpen.value = false
   }, [path])
   return (

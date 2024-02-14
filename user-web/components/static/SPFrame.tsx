@@ -7,7 +7,7 @@ type Props = {
 export default function SPFrame({ image, title, reverse }: Props) {
   return (
     <div
-      className={'mx-2 flex flex-col shadow-md shadow-gray-500 rounded-lg md:rounded-xl xl:rounded-3xl w-full aspect-[7/12] bg-white p-2 ' +
+      className={'mx-2 flex flex-col shadow-md shadow-gray-500 rounded-lg md:rounded-xl xl:rounded-3xl w-full aspect-[7/12] bg-white p-2 select-none ' +
         (reverse === undefined
           ? ''
           : (reverse
@@ -17,7 +17,7 @@ export default function SPFrame({ image, title, reverse }: Props) {
       <div
         className={' rounded-lg md:rounded-t-xl xl:rounded-t-3xl rounded-b-sm md:rounded-b-md bg-slate-400 my-auto h-full flex items-center'}
       >
-        <img src={image} className={'w-full'} alt={title} />
+        <img src={image} className={'w-full'} alt={title} draggable={false} />
       </div>
       <div className={'flex flex-row justify-center text-gray-300 w-full py-0 md:py-1 lg:py-2'}>
         <span className={'block px-1 text-xs md:text-sm lg:text-base'}>▲</span>

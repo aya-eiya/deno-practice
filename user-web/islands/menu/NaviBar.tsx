@@ -4,16 +4,16 @@ import { JSX } from 'preact/jsx-runtime'
 
 export default function NaviBar({ children, scrollY }: JSX.HTMLAttributes & { scrollY: Signal<number | undefined> }) {
   const [sw, setSw] = useState<boolean | undefined>(undefined)
-  const screenH = 80
+  const band = 80
   useEffect(() => {
     const { value } = scrollY
     if (value === undefined) {
       return
     }
-    if (value <= screenH && sw === undefined) {
+    if (value <= band && sw === undefined) {
       return
     }
-    setSw(value <= screenH)
+    setSw(value <= band)
   }, [scrollY.value, sw])
   return (
     <div

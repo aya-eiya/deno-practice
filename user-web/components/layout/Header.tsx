@@ -26,9 +26,9 @@ export default function Header() {
       title: 'About',
       desc: '私たちについて・会社概要',
     },
-    'Futures': {
-      path: '#futures',
-      title: 'Futures',
+    'Features': {
+      path: '#features',
+      title: 'features',
       desc: 'サービスの特徴',
     },
     'Projects': {
@@ -71,8 +71,8 @@ export default function Header() {
               </a>
             </div>
             <div className={'menu-item px-2 hidden md:block'}>
-              <a href={menuItems.Futures.path}>
-                {menuItems.Futures.title}
+              <a href={menuItems.Features.path}>
+                {menuItems.Features.title}
               </a>
             </div>
             <div className={'menu-item px-2 hidden md:block'}>
@@ -115,12 +115,12 @@ export default function Header() {
                     </a>
                   </div>
                   <div className={'menu-item pb-5 animate-[drawer-effect_.7s_ease-out]'}>
-                    <a href={menuItems.Futures.path}>
+                    <a href={menuItems.Features.path}>
                       <p className={'text-4xl lg:text-6xl font-bold'}>
-                        {menuItems.Futures.title}
+                        {menuItems.Features.title}
                       </p>
                       <p className={'text-sm text-gray-400'}>
-                        {menuItems.Futures.desc}
+                        {menuItems.Features.desc}
                       </p>
                     </a>
                   </div>

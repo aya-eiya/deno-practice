@@ -1,10 +1,11 @@
 import { FreshContext } from '$fresh/server.ts'
 import About from '../components/pages/About.tsx'
 import Contact from '../components/pages/Contact.tsx'
-import Futures from '../components/pages/Futures.tsx'
+import Features from '../components/pages/Features.tsx'
 import HomePage from '../components/pages/Home.tsx'
 import News from '../components/pages/News.tsx'
 import Projects from '../components/pages/Projects.tsx'
+import AppHR from '../components/static/AppHR.tsx'
 
 export const handler = {
   async GET(_req: Request, ctx: FreshContext) {
@@ -19,7 +20,8 @@ export default function Home() {
     <div className={'w-full flex flex-col'}>
       <HomePage />
       <About />
-      <Futures />
+      <AppHR />
+      <Features />
       <Projects />
       <News />
       <Contact />
