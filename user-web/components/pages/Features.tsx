@@ -1,6 +1,7 @@
 import { useSignal } from '@preact/signals'
 import Feedback from '../../islands/scrollY/Feedback.tsx'
 import SPFrame from '../static/SPFrame.tsx'
+import Sidebar from '../../islands/feature/Sidebar.tsx'
 const featuresTitle = {
   title: 'FEATURES',
   subtitle: 'Freshの特徴',
@@ -51,10 +52,11 @@ const features = {
       '□ □□ □□□□□ □□□ □□ □□□□ □□□ □□□ □□ □□ □□□□□ □□□ □□ □□□ □ □□□ □□□□□ □□□ □□□ □□□□ □□□ □□□ □□ □□□□□ □□□ □□ □□□□ □□□ □□□□□ □□□ □□□',
     figure: '/logo.svg',
   },
-}
+} as const
 
 export default function Features() {
-  const scrollY = useSignal<number | undefined>(undefined)
+  const { feature1, feature2, feature3, feature4, feature5 } = features
+  const ids = [feature1, feature2, feature3, feature4, feature5].map(({ id }) => id)
   return (
     <section id={'features'} className={'w-full flex flex-col justify-center items-center'}>
       <div className={'w-full relative flex justify-center items-center mb-24'}>
@@ -76,31 +78,24 @@ export default function Features() {
         □□□□ □□□ □□□□□ □□□ □□□□□□□ □□ □□ □□□ □□□ □□ □□□□ □□□ □□□□□ □□□
       </div>
       <div className={'w-full flex flex-col justify-center items-center'}>
-        <div
-          className={'fixed top-0 h-screen hidden md:w-11/12 lg:w-10/12 flex-col justify-center items-start'}
-        >
-          <div className={'text-7xl font-bold my-2'}>01</div>
-          <div className={'text-7xl font-bold my-2'}>02</div>
-          <div className={'text-7xl font-bold my-2'}>03</div>
-          <div className={'text-7xl font-bold my-2'}>04</div>
-          <div className={'text-7xl font-bold my-2'}>05</div>
-        </div>
-        <Feedback scrollY={scrollY} fromById={features.feature1.id} />
-        <Feature {...features.feature1} />
-        <Feature {...features.feature2} />
-        <Feature {...features.feature3} />
-        <Feature {...features.feature4} />
-        <Feature {...features.feature5} />
+        <Sidebar ids={ids} />
+        <Feature feature={feature1} />
+        <Feature feature={feature2} />
+        <Feature feature={feature3} />
+        <Feature feature={feature4} />
+        <Feature feature={feature5} />
       </div>
     </section>
   )
 }
 
-function Feature({ id, title, desc, fullDesc, figure }: typeof features.feature1) {
+function Feature(
+  { feature: { id, title, desc, fullDesc, figure } }: { feature: typeof features[keyof typeof features] },
+) {
   return (
     <section
       id={id}
-      className={'mt-40 mx-8 md:mx-auto md:w-8/12 lg:w-6/12 flex flex-col justify-center items-center'}
+      className={'h-screen md:mx-auto md:w-8/12 lg:w-6/12 flex flex-col justify-center items-center'}
     >
       <div className={'w-full flex flex-row justify-between'}>
         <div className={'w-1/2'}>

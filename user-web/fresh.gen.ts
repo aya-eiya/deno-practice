@@ -11,6 +11,7 @@ import * as $index from './routes/index.tsx'
 import * as $news from './routes/news.tsx'
 import * as $projects from './routes/projects.tsx'
 import * as $dialog_Counter from './islands/dialog/Counter.tsx'
+import * as $feature_Sidebar from './islands/feature/Sidebar.tsx'
 import * as $menu_DrawerMenu from './islands/menu/DrawerMenu.tsx'
 import * as $menu_MainTitle from './islands/menu/MainTitle.tsx'
 import * as $menu_NaviBar from './islands/menu/NaviBar.tsx'
@@ -30,6 +31,7 @@ const manifest = {
   },
   islands: {
     './islands/dialog/Counter.tsx': $dialog_Counter,
+    './islands/feature/Sidebar.tsx': $feature_Sidebar,
     './islands/menu/DrawerMenu.tsx': $menu_DrawerMenu,
     './islands/menu/MainTitle.tsx': $menu_MainTitle,
     './islands/menu/NaviBar.tsx': $menu_NaviBar,
