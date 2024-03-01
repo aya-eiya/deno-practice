@@ -1,5 +1,3 @@
-import { useSignal } from '@preact/signals'
-import Feedback from '../../islands/scrollY/Feedback.tsx'
 import SPFrame from '../static/SPFrame.tsx'
 import Sidebar from '../../islands/feature/Sidebar.tsx'
 const featuresTitle = {
@@ -97,7 +95,7 @@ function Feature(
       id={id}
       className={'h-screen md:mx-auto md:w-8/12 lg:w-6/12 flex flex-col justify-center items-center'}
     >
-      <div className={'w-full flex flex-row justify-between'}>
+      <div className={'w-full flex flex-row justify-between px-8 md:px-0'}>
         <div className={'w-1/2'}>
           <h2 className={'text-lg md:text-xl font-bold'}>{title}</h2>
           <p className={'text-lg md:text-xl lg:text-2xl font-bold mt-8'}>{desc}</p>

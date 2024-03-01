@@ -10,6 +10,7 @@ import * as $futures from './routes/futures.tsx'
 import * as $index from './routes/index.tsx'
 import * as $news from './routes/news.tsx'
 import * as $projects from './routes/projects.tsx'
+import * as $contact_ContactUsForm from './islands/contact/ContactUsForm.tsx'
 import * as $dialog_Counter from './islands/dialog/Counter.tsx'
 import * as $feature_Sidebar from './islands/feature/Sidebar.tsx'
 import * as $menu_DrawerMenu from './islands/menu/DrawerMenu.tsx'
@@ -30,6 +31,7 @@ const manifest = {
     './routes/projects.tsx': $projects,
   },
   islands: {
+    './islands/contact/ContactUsForm.tsx': $contact_ContactUsForm,
     './islands/dialog/Counter.tsx': $dialog_Counter,
     './islands/feature/Sidebar.tsx': $feature_Sidebar,
     './islands/menu/DrawerMenu.tsx': $menu_DrawerMenu,

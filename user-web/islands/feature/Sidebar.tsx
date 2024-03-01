@@ -1,38 +1,24 @@
 import { useSignal } from '@preact/signals'
 import Feedback from '../scrollY/Feedback.tsx'
-import { useEffect, useState } from 'preact/hooks'
+import { useEffect } from 'preact/hooks'
 
 export default function Sidebar({ ids }: { ids: string[] }) {
   const top = useSignal(0)
   const bottom = useSignal(0)
   const clientHeight = useSignal(0)
-  const [colors, setColors] = useState([
+  const colors = [
     'text-red-500',
     'text-blue-500',
     'text-green-500',
     'text-yellow-500',
     'text-pink-500',
-  ])
+  ]
   const altColors = [
     'text-gray-100',
     'text-gray-100',
     'text-gray-100',
     'text-gray-100',
     'text-gray-100',
-  ]
-  const animeColors = [
-    'text-red-500    animate-color-fade-in',
-    'text-blue-500   animate-color-fade-in',
-    'text-green-500  animate-color-fade-in',
-    'text-yellow-500 animate-color-fade-in',
-    'text-pink-500   animate-color-fade-in',
-  ]
-  const animeAltColors = [
-    'text-red-500    animate-color-fade-out saturate-0',
-    'text-blue-500   animate-color-fade-out saturate-0',
-    'text-green-500  animate-color-fade-out saturate-0',
-    'text-yellow-500 animate-color-fade-out saturate-0',
-    'text-pink-500   animate-color-fade-out saturate-0',
   ]
   useEffect(() => {
     clientHeight.value = globalThis.innerHeight
