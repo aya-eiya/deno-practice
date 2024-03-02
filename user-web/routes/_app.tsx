@@ -1,4 +1,5 @@
 import { type PageProps } from '$fresh/server.ts'
+import Footer from '../components/layout/Footer.tsx'
 import Header from '../components/layout/Header.tsx'
 export default function App({ Component }: PageProps) {
   return (
@@ -13,6 +14,7 @@ export default function App({ Component }: PageProps) {
         <Header />
         <div className={'absolute top-0 w-full bg-slate-50'}>
           <Component />
+          <Footer />
         </div>
       </body>
     </html>

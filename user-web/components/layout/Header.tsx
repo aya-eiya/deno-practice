@@ -4,49 +4,52 @@ import Feedback from '../../islands/scrollY/Feedback.tsx'
 import MainTitle from '../../islands/menu/MainTitle.tsx'
 import NaviBar from '../../islands/menu/NaviBar.tsx'
 
+const mainTitle = {
+  title: 'Title Logo',
+  subtitle: 'Denoの練習サイト',
+  desc: 'Denoの練習サイトです\nDenoはV8エンジンとTypeScriptを使っています。',
+  image: '/logo.svg',
+} as const
+
+const contactUs = {
+  buttonTitle: 'Contact Us',
+} as const
+
+const menuItems = {
+  'Home': {
+    path: '#home',
+    title: 'Home',
+    desc: 'ホーム',
+  },
+  'About': {
+    path: '#about',
+    title: 'About',
+    desc: '私たちについて・会社概要',
+  },
+  'Features': {
+    path: '#features',
+    title: 'Features',
+    desc: 'サービスの特徴',
+  },
+  'Projects': {
+    path: '#projects',
+    title: 'Projects',
+    desc: '導入事例・プロジェクト',
+  },
+  'News': {
+    path: '#news',
+    title: 'News',
+    desc: 'ニュース・お知らせ',
+  },
+  'Contact': {
+    path: '#contact',
+    title: 'Contact',
+    desc: 'お問い合わせ・お見積もり',
+  },
+} as const
+
 export default function Header() {
   const scrollY = useSignal<number | undefined>(undefined)
-  const mainTitle = {
-    title: 'Title Logo',
-    subtitle: 'Denoの練習サイト',
-    desc: 'Denoの練習サイトです\nDenoはV8エンジンとTypeScriptを使っています。',
-    image: '/logo.svg',
-  }
-  const contactUs = {
-    buttonTitle: 'Contact Us',
-  }
-  const menuItems = {
-    'Home': {
-      path: '#home',
-      title: 'Home',
-      desc: 'ホーム',
-    },
-    'About': {
-      path: '#about',
-      title: 'About',
-      desc: '私たちについて・会社概要',
-    },
-    'Features': {
-      path: '#features',
-      title: 'Features',
-      desc: 'サービスの特徴',
-    },
-    'Projects': {
-      path: '#projects',
-      title: 'Projects',
-      desc: '導入事例・プロジェクト',
-    },
-    'News': {
-      path: '#news',
-      title: 'News',
-      desc: 'ニュース・お知らせ',
-    },
-    'Contact': {
-      path: '#contact',
-      title: 'Contact',
-      desc: 'お問い合わせ・お見積もり',
-    },
-  }
   return (
     <header
       className={'fixed top-0 w-full bg-white md:bg-transparent h-20 md:h-32 flex flex-row justify-between items-center px-2 z-10'}
