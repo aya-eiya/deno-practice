@@ -28,7 +28,7 @@ export default function Header() {
     },
     'Features': {
       path: '#features',
-      title: 'features',
+      title: 'Features',
       desc: 'サービスの特徴',
     },
     'Projects': {

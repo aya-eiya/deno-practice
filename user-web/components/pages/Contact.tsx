@@ -8,9 +8,9 @@ const contactTitle = {
 } as const
 export default function Contact() {
   return (
-    <section id={'contact'} className={'h-screen w-full flex flex-col md:flex-row px-24'}>
+    <section id={'contact'} className={'min-h-screen w-full flex flex-col md:flex-row px-8 md:px-24'}>
       <div className={'md:w-1/2 mb-4'}>
-        <h1 className={'text-6xl font-bold'}>{contactTitle.title}</h1>
+        <h1 className={'text-6xl font-bold mb-2'}>{contactTitle.title}</h1>
         <p className={'text-gray-500'}>{contactTitle.subtitle}</p>
         <p className={'text-xl mt-4 font-bold'}>{contactTitle.catch}</p>
         <p className={'mt-4 md:w-11/12 lg:w-8/12 whitespace-break-spaces'}>{contactTitle.description}</p>

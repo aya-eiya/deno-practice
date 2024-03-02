@@ -23,7 +23,7 @@ export default function Counter({
       <button onClick={() => isOpen.value = !isOpen.value}>Open Counter</button>
 
       <div className={'mx-auto max-w-screen-md'}>
-        <dialog ref={ref} className={'backdrop-blur-2xl backdrop-filter w-2/6'}>
+        <dialog ref={ref} className={'backdrop-blur-2xl backdrop-filter shadow-lg w-2/6'}>
           <header>
             <div className={'flex flex-row justify-between'}>
               <div className={'p-3'}>🔔</div>
@@ -36,9 +36,15 @@ export default function Counter({
             </div>
           </header>
           <div className={'flex gap-8 py-6 justify-center'}>
-            <button onClick={() => count.value -= 1}>-1</button>
-            <p className={'text-3xl tabular-nums'}>{count}</p>
-            <button onClick={() => count.value += 1}>+1</button>
+            <button
+              className={'border select-none rounded-lg w-12 h-18 disabled:opacity-50 disabled:cursor-not-allowed'}
+              disabled={count.value <= 0}
+              onClick={() => count.value -= count.value > 0 ? 1 : 0}
+            >
+              -1
+            </button>
+            <p className={'text-3xl tabular-nums'}>{String(count).padStart(3, '0')}</p>
+            <button className={'border select-none rounded-lg w-12 h-18'} onClick={() => count.value += 1}>+1</button>
           </div>
         </dialog>
       </div>

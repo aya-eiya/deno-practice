@@ -63,7 +63,7 @@ export default function Features() {
         </aside>
         <div className={'absolute w-full h-full top-0 flex flex-col justify-center items-center'}>
           <div>
-            <h1 className={'text-6xl md:text-7xl lg:text-9xl font-bold'}>{featuresTitle.title}</h1>
+            <h1 className={'text-6xl md:text-7xl lg:text-9xl font-bold mb-2'}>{featuresTitle.title}</h1>
             <p className={'text-gray-500'}>{featuresTitle.subtitle}</p>
           </div>
         </div>
